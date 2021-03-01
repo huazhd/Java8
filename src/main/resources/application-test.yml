@@ -4,10 +4,36 @@ spring:
   application:
     name: demoProject
 
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.10.21.103:3306/lottery?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username:
+    password:
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 3600000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x' #是用来验证数据库连接的查询语句（mysql）
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    maxOpenPreparedStatements: 20
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.pojo
 
 
-
-
+logback:
+  appname: lottery
+logging:
+  level:
+    com.example.demo.dao : DEBUG
 
 
 

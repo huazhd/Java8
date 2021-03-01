@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.JavaFunctionsService;
-import lombok.Data;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +13,6 @@ import javax.annotation.Resource;
  * @date       ：2021-02-18 9:58
  */
 @RestController()
-@Data
 @RequestMapping("java8")
 public class TestJava8 {
     @Resource

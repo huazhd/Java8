@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.JavaService;
-import lombok.Data;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +14,6 @@ import javax.annotation.Resource;
  * @date ：2021/1/20 0020 16:30
  */
 @RestController()
-@Data
 @RequestMapping("demo")
 
 public class DemoController {

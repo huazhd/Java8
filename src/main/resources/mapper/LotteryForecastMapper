@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.dao.LotteryForecastDao">
+    <resultMap id="lotteryMap" type="com.example.demo.pojo.LotteryPojo">
+        <id column="id" property="id" javaType="java.lang.String"/>
+        <result column="red_one" property="redOne" javaType="java.lang.String"/>
+        <result column="red_two" property="redTwo" javaType="java.lang.String"/>
+        <result column="red_three" property="redThree" javaType="java.lang.String"/>
+        <result column="red_four" property="redFour" javaType="java.lang.String"/>
+        <result column="red_five" property="redFive" javaType="java.lang.String"/>
+        <result column="red_six" property="redSix" javaType="java.lang.String"/>
+
+        <result column="blue_one" property="blueOne" javaType="java.lang.String"/>
+    </resultMap>
+
+    <select id="getHisTwentyData" resultMap="lotteryMap">
+        select
+            a.id,
+            a.red_one,
+            a.red_two,
+            a.red_three,
+            a.red_four,
+            a.red_five,
+            a.red_six,
+            a.blue_one
+        from
+            lottery_his a
+            where a.is_delete=0
+            order by a.id desc
+            limit 20
+    </select>
+
+
+</mapper>

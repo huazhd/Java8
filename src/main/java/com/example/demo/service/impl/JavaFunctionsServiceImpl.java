@@ -110,7 +110,7 @@ public class JavaFunctionsServiceImpl implements JavaFunctionsService {
         peopleList.add(new People(5,"赵六","男",38));
         peopleList.add(new People(6,"大大","男",65));
 
-        List<String> names = peopleList.stream().map(s -> s.getName()).collect(Collectors.toList());
+        List<String> names = peopleList.stream().map(People::getName).collect(Collectors.toList());
 
         names.forEach(System.out::println);
     }
